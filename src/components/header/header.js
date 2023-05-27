@@ -1,12 +1,12 @@
+import './header.css';
+
 const Header = () => {
-  const val = 'Hello World';
   return (
-    <>
-      <h1>Hi!</h1>
-      <p>{val}</p>
-      <input type="text" placeholder='some text' />
-      <button>button</button>
-    </>
+    <header>
+      <h1>Учет сотрудников в компании N</h1>
+      <h2>Общее число:</h2>
+      <h2>Премию получат:</h2>
+    </header>
   );
 }
 
