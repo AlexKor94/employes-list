@@ -1,0 +1,19 @@
+.app>.add-form {
+margin-top: 30px;  
+padding: 30px;
+background-color: #3d5a80;
+border-radius: 30px;
+box-shadow: 15px 15px 30px rgba(0, 0, 0, .15);
+color: #fff;
+}
+
+.app>.add-form>form {
+  width: 80%;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.app>.add-form>form>input {
+  width: 40%;
+}

@@ -1,0 +1,37 @@
+.table>.row {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #808080;
+  /* border-radius: 30px; */
+  font-weight: 700;
+  padding: 10px;
+}
+
+.table>.row>.name {
+  margin-left: 10px;
+}
+
+.table>.row>.cost {
+  margin-left: 450px;
+}
+
+.table>.row>.icons>i {
+  margin: 0 7px;
+  background-color: #ece9e9;
+}
+
+.table>.row>.icons>.fa-trash {
+  color: red;
+}
+
+.table>.row>.icons>.fa-star {
+  color: yellow;
+  background-color: transparent;
+}
+
+.table>.row>.icons>.fa-cookie {
+  color: rgb(161, 109, 31);
+}
