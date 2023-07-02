@@ -3,8 +3,8 @@ import Filter from '../filter/filter';
 import Search from '../search/search';
 import Table from '../table/table';
 import AddEmplee from '../form/addEmplee';
-
 import './app.css';
+
 function App() {
   return (
     <div className="app">
