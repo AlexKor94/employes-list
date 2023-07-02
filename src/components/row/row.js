@@ -1,7 +1,8 @@
 import './row.css';
 
 const Row = (props) => {
-  const [name, salary] = props;
+  const { name, salary } = props;
+
   return (
     <div className="row">
       <span className='name'>{name}</span>

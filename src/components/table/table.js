@@ -20,7 +20,7 @@ const Table = () => {
   const [employees, setEmployee] = useState(data);
 
   const rows = employees.map((employee, i) => {
-    <Row name={employee.name} salary={employee.salary} key={i} />
+    return <Row name={employee.name} salary={employee.salary} key={i} />
   });
 
   return (
