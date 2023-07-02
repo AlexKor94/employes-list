@@ -1,10 +1,11 @@
 import './row.css';
 
-const Row = () => {
+const Row = (props) => {
+  const [name, salary] = props;
   return (
     <div className="row">
-      <span className='name'>Alex K.</span>
-      <span className='cost'>1000</span>
+      <span className='name'>{name}</span>
+      <span className='cost'>{salary}</span>
       <div className="icons">
         <i className="fa-solid fa-cookie"></i>
         <i className="fa-solid fa-trash"></i>
