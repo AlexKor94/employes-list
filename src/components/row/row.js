@@ -21,8 +21,9 @@ class Row extends Component {
       highlight: !highlight
     }));
   }
+
   render() {
-    const { name, salary } = this.props;
+    const { name, salary, deleteItem } = this.props;
     const { increase, highlight } = this.state;
 
     let classNames = "row";
@@ -40,7 +41,7 @@ class Row extends Component {
         <span className='cost'>{salary + '$'}</span>
         <div className="icons">
           <i className="fa-solid fa-cookie" onClick={this.onIncrease}></i>
-          <i className="fa-solid fa-trash"></i>
+          <i className="fa-solid fa-trash" onClick={deleteItem}></i>
           <i className="fa-solid fa-star"></i>
         </div>
       </div>

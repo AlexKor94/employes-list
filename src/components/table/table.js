@@ -3,12 +3,17 @@ import Row from '../row/row';
 import { useState } from 'react';
 import AddEmplee from '../form/addEmplee';
 
-const Table = ({ data }) => {
+const Table = (props) => {
+  const { data, deleteItem } = props;
 
   const [employees, setEmployee] = useState(data);
 
   const rows = employees.map((employee, i) => {
-    return <Row {...employee} key={i} />
+    const { id, ...itemprops } = employee;
+    return <Row
+      key={id}
+      {...itemprops}
+      deleteItem={() => deleteItem(id)} />
   });
 
   const setEmployees = (obj) => {
