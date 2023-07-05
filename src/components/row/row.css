@@ -1,21 +1,24 @@
 .table>.row {
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
   align-items: center;
-  justify-content: space-between;
-  border: 1px solid #808080;
-  /* border-radius: 30px; */
   font-weight: 700;
   padding: 10px;
 }
 
-.table>.row>.name {
-  margin-left: 10px;
+.table>.row>span{
+  grid-column: 1;
+
 }
 
 .table>.row>.cost {
-  margin-left: 450px;
+  grid-column: 2;
+}
+
+.table>.row>.icons {
+  grid-column: 3;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .table>.row>.icons>i {
@@ -33,5 +36,9 @@
 }
 
 .table>.row>.icons>.fa-cookie {
+  color: rgb(161, 109, 31);
+}
+
+.table>.row.increase {
   color: rgb(161, 109, 31);
 }

@@ -1,32 +1,27 @@
 import './table.css';
 import Row from '../row/row';
 import { useState } from 'react';
+import AddEmplee from '../form/addEmplee';
 
-const Table = () => {
-
-  const data = [{
-    name: "Alex K.",
-    salary: 1000
-  },
-  {
-    name: "Alex K.",
-    salary: 1000
-  },
-  {
-    name: "Alex K.",
-    salary: 1000
-  }];
+const Table = ({ data }) => {
 
   const [employees, setEmployee] = useState(data);
 
   const rows = employees.map((employee, i) => {
-    return <Row name={employee.name} salary={employee.salary} key={i} />
+    return <Row {...employee} key={i} />
   });
 
+  const setEmployees = (obj) => {
+    setEmployee([...employees, obj]);
+  }
+
   return (
-    <div className="table">
-      {rows}
-    </div>
+    <>
+      <div className="table">
+        {rows}
+      </div>
+      <AddEmplee setEmployees={setEmployees} />
+    </>
   );
 }
 
