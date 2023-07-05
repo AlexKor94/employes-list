@@ -1,3 +1,18 @@
+@keyframes starAnimation{
+  0% {
+      transform: rotate(0deg);
+    }
+  
+    50% {
+      transform: rotate(180deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+
 .table>.row {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -31,8 +46,14 @@
 }
 
 .table>.row>.icons>.fa-star {
+  opacity: 0; 
   color: yellow;
   background-color: transparent;
+}
+
+.table>.row.highlight>.icons>.fa-star{
+  opacity: 1; 
+  animation: starAnimation 1s linear 1;
 }
 
 .table>.row>.icons>.fa-cookie {
