@@ -6,9 +6,9 @@ import AddEmplee from '../form/addEmplee';
 const Table = (props) => {
   const { data, deleteItem } = props;
 
-  const [employees, setEmployee] = useState(data);
+  // const [employees, setEmployee] = useState(data);
 
-  const rows = employees.map((employee, i) => {
+  const rows = data.map((employee, i) => {
     const { id, ...itemprops } = employee;
     return <Row
       key={id}
@@ -16,16 +16,16 @@ const Table = (props) => {
       deleteItem={() => deleteItem(id)} />
   });
 
-  const setEmployees = (obj) => {
-    setEmployee([...employees, obj]);
-  }
+  // const setEmployees = (obj) => {
+  //   console.log("Employees added");
+  // }
 
   return (
     <>
       <div className="table">
         {rows}
       </div>
-      <AddEmplee setEmployees={setEmployees} />
+      {/* <AddEmplee setEmployees={setEmployees} /> */}
     </>
   );
 }
