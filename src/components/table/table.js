@@ -1,7 +1,7 @@
 import './table.css';
 import Row from '../row/row';
 import { useState } from 'react';
-import AddEmplee from '../form/addEmplee';
+
 
 const Table = (props) => {
   const { data, deleteItem } = props;
