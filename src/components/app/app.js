@@ -41,16 +41,23 @@ function App() {
     setUsers(tempData);
   }
 
+  const onIncrease = (id) => {
+    console.log(id);
+  }
+
   return (
     <div className="app">
-      <Header empCount={data.length} />
+      <Header
+        empCount={data.length}
+        empCountIncrease={data.filter(str => str.increase == true).length} />
       <div className="search-form">
         <Search />
         <Filter />
       </div>
       <Table
         data={data}
-        deleteItem={deleteItem} />
+        deleteItem={deleteItem}
+        onIncrease={onIncrease} />
       <AddEmplee addItem={addItem} />
     </div>
   );
