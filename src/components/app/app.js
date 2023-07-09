@@ -28,13 +28,8 @@ function App() {
     increase: false
   }]);
 
-  const [empnubm, setEmpNumb] = useState({
-    empAll: data.length
-  });
-
   const deleteItem = (id) => {
     setUsers(data => data.filter(user => user.id !== id));
-
   }
 
   const addItem = (emplee) => {
@@ -48,7 +43,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header empCount={empnubm} />
+      <Header empCount={data.length} />
       <div className="search-form">
         <Search />
         <Filter />
