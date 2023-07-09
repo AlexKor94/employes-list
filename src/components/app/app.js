@@ -14,24 +14,29 @@ function App() {
       id: 1,
       name: "Alex K.",
       salary: 3000,
-      increase: false
+      increase: false,
+      promote: false
     },
     {
       id: 2,
       name: "Fedir K.",
       salary: 2000,
-      increase: true
+      increase: false,
+      promote: false
     },
     {
       id: 3,
       name: "Petro K.",
       salary: 1000,
-      increase: false
+      increase: false,
+      promote: false
     }],
     maxId: 3
   });
 
   const [term, setTerm] = useState('');
+
+  const [filter, setFilter] = useState('all');
 
   const { data, maxId } = users;
 
@@ -50,7 +55,8 @@ function App() {
     const tempData = [...data, {
       id: maxId + 1,
       ...emplee,
-      increase: false
+      increase: false,
+      promote: false
     }];
     setUsers({
       data: tempData,
@@ -79,23 +85,37 @@ function App() {
     return elements.filter(el => el.name.indexOf(term) > -1)
   }
 
+  const dataFiltering = (data, filter) => {
+    switch (filter) {
+      case 'promote':
+        return data.filter(el => el.promote);
+      case 'moreThousand':
+        return data.filter(el => el.salary > 1000);
+      default:
+        return data;
+    }
+  }
+
   const onUpdateSearch = (term) => {
     setTerm(term);
   }
 
-  const visibleData = searchEmp(data, term);
+  const onUpdateFilter = (filter) => {
+    setFilter(filter);
+  }
+
+  const visibleData = dataFiltering(searchEmp(data, term), filter);
 
   return (
-
     <div className="app">
       <Header
         empCount={data.length}
-        empCountIncrease={data.filter(str => str.increase == true).length} />
+        empCountIncrease={data.filter(str => str.increase === true).length} />
       <div className="search-form">
         <Search
           onUpdateSearch={onUpdateSearch}
         />
-        <Filter />
+        <Filter filter={filter} onUpdateFilter={onUpdateFilter} />
       </div>
       <Table
         data={visibleData}
