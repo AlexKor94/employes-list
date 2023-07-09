@@ -11,7 +11,7 @@ const Search = (props) => {
       <input
         className="form-control"
         type="text"
-        placeholder="Search here"
+        placeholder="Знайдіть співробітника за ім'ям"
         aria-label="default input example"
         value={term}
         onChange={e => onUpdateSearch(e.target.value)}

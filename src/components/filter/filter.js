@@ -3,9 +3,9 @@ import './filter.css';
 const Filter = (props) => {
 
   const dataFilter = [
-    { name: "all", label: "Все сотрудники" },
-    { name: "promote", label: "На повышение" },
-    { name: "moreThousand", label: "З/П больше 1000$" }
+    { name: "all", label: "Всі співробітники" },
+    { name: "promote", label: "На підвищення" },
+    { name: "moreThousand", label: "З/П більше 1000$" }
   ];
 
   const buttons = dataFilter.map(button => {
