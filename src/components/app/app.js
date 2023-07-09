@@ -28,6 +28,8 @@ function App() {
     increase: false
   }]);
 
+  const [term, setTerm] = useState('');
+
   const deleteItem = (id) => {
     setUsers(data => data.filter(user => user.id !== id));
   }
@@ -41,21 +43,42 @@ function App() {
     setUsers(tempData);
   }
 
-  const onIncrease = (id) => {
-    console.log(id);
+  const onIncrease = (id, prop) => {
+    setUsers(data => data.map(user => {
+      if (user.id === id) {
+        return { ...user, [prop]: !user[prop] }
+      }
+      return user;
+    }));
   }
 
+  const searchEmp = (elements, term) => {
+    if (term === '') {
+      return elements;
+    }
+    return elements.filter(el => el.name.indexOf(term) > -1)
+  }
+
+  const onUpdateSearch = (term) => {
+    setTerm(term);
+  }
+
+  const visibleData = searchEmp(data, term);
+
   return (
+
     <div className="app">
       <Header
         empCount={data.length}
         empCountIncrease={data.filter(str => str.increase == true).length} />
       <div className="search-form">
-        <Search />
+        <Search
+          onUpdateSearch={onUpdateSearch}
+        />
         <Filter />
       </div>
       <Table
-        data={data}
+        data={visibleData}
         deleteItem={deleteItem}
         onIncrease={onIncrease} />
       <AddEmplee addItem={addItem} />

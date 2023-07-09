@@ -30,10 +30,10 @@ class Row extends Component {
 
     return (
       <div className={classNames}>
-        <span className='name' onClick={this.onHighlight}>{name}</span>
+        <span className='name' onClick={this.onHighlight} data-toggle="rise">{name}</span>
         <span className='cost'>{salary + '$'}</span>
         <div className="icons">
-          <i className="fa-solid fa-cookie" onClick={onIncrease}></i>
+          <i className="fa-solid fa-cookie" onClick={onIncrease} data-toggle="increase"></i>
           <i className="fa-solid fa-trash" onClick={deleteItem}></i>
           <i className="fa-solid fa-star"></i>
         </div>

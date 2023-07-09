@@ -12,7 +12,7 @@ const Table = (props) => {
       key={id}
       {...itemprops}
       deleteItem={() => deleteItem(id)}
-      onIncrease={() => onIncrease(id)}
+      onIncrease={(e) => onIncrease(id, e.currentTarget.getAttribute('data-toggle'))}
     />
   });
 

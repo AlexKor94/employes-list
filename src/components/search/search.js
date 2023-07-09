@@ -1,9 +1,21 @@
+import { useState } from 'react';
 import './search.css';
-
-const Search = () => {
+const Search = (props) => {
+  const [term, onUpdateTerm] = useState('');
+  const onUpdateSearch = (val) => {
+    onUpdateTerm(val);
+    props.onUpdateSearch(val);
+  }
   return (
     <>
-      <input className="form-control" type="text" placeholder="Search here" aria-label="default input example" />
+      <input
+        className="form-control"
+        type="text"
+        placeholder="Search here"
+        aria-label="default input example"
+        value={term}
+        onChange={e => onUpdateSearch(e.target.value)}
+      />
     </>
 
   );
