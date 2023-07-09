@@ -38,11 +38,25 @@
 
 .table>.row>.icons>i {
   margin: 0 7px;
+  background-color: transparent;
+}
+
+.table>.row>.icons>.fa-cookie {
+  color: rgb(161, 109, 31);
+}
+
+.table>.row>.icons>.fa-cookie:hover {
+  cursor: pointer;
   background-color: #ece9e9;
 }
 
 .table>.row>.icons>.fa-trash {
   color: red;
+}
+
+.table>.row>.icons>.fa-trash:hover {
+  cursor: pointer;
+  background-color: #ece9e9;
 }
 
 .table>.row>.icons>.fa-star {
@@ -54,10 +68,6 @@
 .table>.row.highlight>.icons>.fa-star{
   opacity: 1; 
   animation: starAnimation 1s linear 1;
-}
-
-.table>.row>.icons>.fa-cookie {
-  color: rgb(161, 109, 31);
 }
 
 .table>.row.increase {
